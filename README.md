@@ -51,7 +51,9 @@ Após a execução do comando acima, será gerado um arquivo chamado resultado.h
 
 A estrutura do projeto deve ser:
 
+```pgsql
 📁 meu-projeto/
 ├── sua-collection.json
 ├── resultado.html
 └── README.md
+```
