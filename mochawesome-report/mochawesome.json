@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-31T00:19:27.649Z",
+    "end": "2025-05-31T00:19:49.801Z",
+    "duration": 22152,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d87ea788-7330-4783-adf5-900371b0cce4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\testeUI.cy.js",
+      "file": "cypress\\e2e\\testeUI.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "12906f64-b386-43f2-b5fa-789bfd4c7f86",
+          "title": "teste de login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "teste de login completo",
+              "fullTitle": "teste de login teste de login completo",
+              "timedOut": null,
+              "duration": 6994,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = gerarDados();\nlet nome = infos[0];\nlet senha = infos[1];\nconst alertStub = cy.stub();\ncy.on('window:alert', alertStub);\ncadastrar(nome, senha);\n// Espera para o alerta do login de cadastro bem sucedido\ncy.wait(1000).then(() => {\n  expect(alertStub.getCall(0)).to.be.calledWith('Sign up successful.');\n});\n// Damos um tempo para o cadastro completar e o alerta de sucesso aparecer\ncy.wait(1000);\nlogin(nome, senha);",
+              "err": {},
+              "uuid": "416f2a2a-69c8-4134-8e76-4b4016476b85",
+              "parentUUID": "12906f64-b386-43f2-b5fa-789bfd4c7f86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "teste de login com senha incorreta",
+              "fullTitle": "teste de login teste de login com senha incorreta",
+              "timedOut": null,
+              "duration": 5725,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = gerarDados();\nlet nome = infos[0];\nlet senha = infos[1];\nconst alertStub = cy.stub();\ncy.on('window:alert', alertStub);\ncadastrar(nome, senha);\n// Damos um tempo para o cadastro completar e o alerta de sucesso aparecer\ncy.wait(1000);\nlogin(nome, 'senha_incorreta');\n// Espera para o alerta do login falhar ser exibido\ncy.wait(1000).then(() => {\n  // Mostra todos os alertas capturados (para debug, se quiser)\n  // Verifica a segunda chamada do alert\n  expect(alertStub.getCall(1)).to.be.calledWith('Wrong password.');\n});",
+              "err": {},
+              "uuid": "65fcb99b-f955-4778-9608-3ea20eb8c102",
+              "parentUUID": "12906f64-b386-43f2-b5fa-789bfd4c7f86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "teste de login sem preencher o campo de senha",
+              "fullTitle": "teste de login teste de login sem preencher o campo de senha",
+              "timedOut": null,
+              "duration": 7163,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let infos = gerarDados();\nlet nome = infos[0];\nlet senha = infos[1];\nconst alertStub = cy.stub();\ncy.on('window:alert', alertStub);\ncadastrar(nome, senha);\n// Espera para o alerta do login de cadastro bem sucedido\ncy.wait(1000).then(() => {\n  expect(alertStub.getCall(0)).to.be.calledWith('Sign up successful.');\n});\n// Damos um tempo para o cadastro completar e o alerta de sucesso aparecer\ncy.wait(1000);\nloginSemSenha(nome);\n// Espera para o alerta do login falhar ser exibido\ncy.wait(1000).then(() => {\n  expect(alertStub.getCall(1)).to.be.calledWith('Please fill out Username and Password.');\n});",
+              "err": {},
+              "uuid": "2b938580-8eb6-4acc-8875-fedf50e544de",
+              "parentUUID": "12906f64-b386-43f2-b5fa-789bfd4c7f86",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "416f2a2a-69c8-4134-8e76-4b4016476b85",
+            "65fcb99b-f955-4778-9608-3ea20eb8c102",
+            "2b938580-8eb6-4acc-8875-fedf50e544de"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19882,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
